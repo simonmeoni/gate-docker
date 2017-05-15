@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+   db:
+     image: mysql
+     volumes:
+       - db_data:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: root
+
+   gate:
+     depends_on:
+       - db
+     image: gate
+     ports:
+       - 8080:8080
+     restart: always
+     environment:
+       SQLHOST: db
+       PASSWORD: root
+volumes:
+    db_data:
