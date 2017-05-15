@@ -24,8 +24,10 @@ RUN apt-get install -y oracle-java6-installer
 RUN apt-get install -y subversion
 RUN apt-get install -y ant
 RUN cd /opt && svn checkout http://svn.code.sf.net/p/gate/code/teamware/trunk gate-code
-ADD ./gate/build.properties /opt/gate-code/build.properties
-ADD ./gate/entrypoint.sh /entrypoint.sh
+
+# Add configuration files & script
+ADD ./build.properties /opt/gate-code/build.properties
+ADD ./entrypoint.sh /entrypoint.sh
 
 ##################### INSTALLATION END #####################
 EXPOSE 8080
