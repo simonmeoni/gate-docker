@@ -19,8 +19,7 @@ RUN add-apt-repository -y "deb http://ppa.launchpad.net/webupd8team/java/ubuntu 
 
 ## install dependencies
 RUN apt-get update
-RUN echo "oracle-java6-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
-RUN apt-get install -y oracle-java6-installer
+RUN apt-get install -y openjdk-6-jdk
 RUN apt-get install -y subversion
 RUN apt-get install -y ant
 RUN cd /opt && svn checkout http://svn.code.sf.net/p/gate/code/teamware/trunk gate-code

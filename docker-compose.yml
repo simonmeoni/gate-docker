@@ -13,11 +13,16 @@ services:
      depends_on:
        - db
      image: gate
+     volumes:
+       - gate:/opt/gate-code/
      ports:
        - 8080:8080
      restart: always
      environment:
        SQLHOST: db
        PASSWORD: root
+       HOST: "${HOST}"
 volumes:
-    db_data:
+      db_data:
+      gate:
+

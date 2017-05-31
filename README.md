@@ -5,5 +5,6 @@ a docker for deploying a gate server
 execute `sudo ./build.sh`
 or : 
 
-1. `sudo build -t gate ./gate`
-2. `sudo docker-compose up`
+1. `echo "HOST=localhost" > .env`
+2. `sudo build -t gate ./gate`
+3. `sudo docker-compose up`
